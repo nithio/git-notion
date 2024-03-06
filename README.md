@@ -20,9 +20,6 @@ cd git-notion
 pip install -e .
 ```
 
-To fix HTTP errors, then run:
-```python -m pip install notion-cobertos-fork```
-
 ## Configuring
 
 `NOTION_TOKEN_V2` - Can be found in your [browser cookies](https://www.redgregory.com/notion/2020/6/15/9zuzav95gwzwewdu1dspweqbv481s5) for Notion's website.
@@ -41,6 +38,13 @@ These parameters can be set in the `setup.cfg` for the repo.
 [git-notion]
 ignore_regex = models/.*
 notion_root_page = https://www.notion.so/...
+```
+
+If you want to map specific Github folders to Notion subpages besides the `notion_root_page`, you can add the folder names and subpage URLs as parameters in the `setup.cfg` for the repo:
+```
+[folders]
+# docs = <any_notion_url> # This can be any subpage of the Notion root page
+# docs/NestedTest = <any_other_notion_url> # This can be the same subpage as above, or any other subpage of the Notion root page
 ```
 
 ## Usage
